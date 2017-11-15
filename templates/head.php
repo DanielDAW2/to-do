@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(!empty($_SESSION['user']['email']) && $_SERVER['SCRIPT_NAME'] != "/to-do/lista.php")
+if(empty($_SESSION['user']['email']) && $_SERVER['SCRIPT_NAME'] == "/to-do/lista.php")
 {
-   header("Location:./lista.php");
+   header("Location:./index.php");
 }
 include $_SERVER["DOCUMENT_ROOT"]."/to-do/lib/define.php";
 

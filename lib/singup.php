@@ -7,6 +7,12 @@
     !empty($_POST['pwd2']))
     {
       singup($_POST['email'],md5($_POST['pwd']),md5($_POST['pwd2']));
-      header("Location:".path."lista.php");
+      if(login($_POST['email'],md5($_POST['pwd'])) == 1)
+      {
+        header("Location:".path."lista.php");
+      }
+      else {
+        header("Location:".path);
+      }
     }
  ?>
